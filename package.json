@@ -1,5 +1,6 @@
 {
   "name": "carlo-spa",
+  "homepage": "https://github.com/cartulang/carlo-page",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
