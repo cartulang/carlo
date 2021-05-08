@@ -18,7 +18,7 @@ const { initial, animate, transition } = {
 };
 
 const Description = ({ imageSlides, currentImage }) => {
-  const { title, description, technologyUsed, imageUrl } = imageSlides[
+  const { title, description, technologyUsed, appLink } = imageSlides[
     currentImage
   ];
   return (
@@ -36,7 +36,9 @@ const Description = ({ imageSlides, currentImage }) => {
           <span key={index}>{tech}</span>
         ))}
       </article>
-      <a href={imageUrl}>Click here for demo</a>
+      <a href={appLink} target="_blank" rel="noopener noreferrer">
+        Click here for demo
+      </a>
     </motion.section>
   );
 };

@@ -5,22 +5,22 @@ const Nav = ({ setIsOpen }) => {
       <div className="navbar-links">
         <ul>
           <li>
-            <Link to="/" onClick={() => setIsOpen("close")}>
+            <Link to="/" replace onClick={() => setIsOpen("close")}>
               Home
             </Link>
           </li>
           <li>
-            <Link to="/about" onClick={() => setIsOpen("close")}>
+            <Link to="/about" replace onClick={() => setIsOpen("close")}>
               About
             </Link>
           </li>
           <li>
-            <Link to="/projects" onClick={() => setIsOpen("close")}>
+            <Link to="/projects" replace onClick={() => setIsOpen("close")}>
               Projects
             </Link>
           </li>
           <li>
-            <Link to="/contact" onClick={() => setIsOpen("close")}>
+            <Link to="/contact" replace onClick={() => setIsOpen("close")}>
               Contact
             </Link>
           </li>

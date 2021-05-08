@@ -9,6 +9,7 @@ const Footer = () => {
         <motion.a
           href="https://linkedin.com/in/cartulang"
           target="_blank"
+          rel="noopener noreferrer"
           whileHover={{ scale: 1.2 }}
         >
           <FaLinkedin size="2.5rem" />
@@ -16,6 +17,7 @@ const Footer = () => {
         <motion.a
           href="https://github.com/cartulang"
           target="_blank"
+          rel="noopener noreferrer"
           whileHover={{ scale: 1.2 }}
         >
           <FaGithub size="2.5rem" />
