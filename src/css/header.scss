@@ -1,0 +1,149 @@
+:root {
+  --primary: #fff;
+  --secondary: #fafafa;
+  --blue: #60fcf1;
+  --blue-dark: rgba(96, 252, 241, 0.6);
+  --dark: #000;
+  --dark-light: #1d1d1d;
+  --grey-light: #7f7f7f;
+}
+
+.header {
+  font-family: Helvetica, Arial, sans-serif;
+  display: flex;
+  flex: 125px;
+  z-index: 10;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100%;
+  max-width: 130px;
+  background-color: var(--dark);
+
+  .brand-name {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+      text-decoration: none;
+      color: var(--blue);
+      font-size: 3rem;
+      font-weight: 800;
+    }
+
+    h3 {
+      color: var(--primary);
+      margin: 0.75rem 0;
+    }
+
+    p {
+      color: var(--secondary);
+    }
+  }
+
+  .navbar {
+    .navbar-links {
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      li {
+        padding: 1rem 0;
+      }
+
+      a {
+        text-decoration: none;
+        font-size: 16;
+        color: var(--secondary);
+        text-align: center;
+        position: relative;
+      }
+
+      a:hover {
+        color: var(--blue);
+      }
+
+      a::before {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        right: 0;
+        left: 0;
+        height: 2px;
+        background: var(--blue);
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+        transform-origin: left;
+      }
+
+      a:hover::before {
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+// burger menu
+
+.toggle-button {
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  right: 2rem;
+  top: 0.75rem;
+  z-index: 1;
+  display: none;
+
+  .bar {
+    width: 35px;
+    height: 5px;
+    margin: 6px 0;
+    background: var(--primary);
+    transition: 0.4s;
+    opacity: 1;
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: none;
+    width: 100%;
+    overflow: scroll;
+    transform: scaleX(0);
+    transition: 0.3s transform;
+    transform-origin: right;
+  }
+
+  .toggle-button {
+    z-index: 100;
+    display: inline-block;
+  }
+}
+
+.toggle-button {
+  .open.bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-9px, 7px);
+  }
+
+  .open.bar:nth-child(2) {
+    transform: translateX(-15px);
+    opacity: 0;
+  }
+
+  .open.bar:nth-child(3) {
+    transform: rotate(45deg) translate(-9px, -7px);
+  }
+}
+
+.header.open {
+  display: flex;
+  transform: scaleX(1);
+}

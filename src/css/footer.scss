@@ -1,0 +1,48 @@
+:root {
+  --primary: #fff;
+  --secondary: #fafafa;
+  --blue: #60fcf1;
+  --blue-dark: rgba(96, 252, 241, 0.6);
+  --dark: #000;
+  --dark-light: #1d1d1d;
+  --grey-light: #7f7f7f;
+}
+
+.footer {
+  font-family: Helvetica, Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  color: #222;
+  font-size: 1rem;
+
+  .social {
+    display: flex;
+    flex-direction: column;
+    a {
+      margin: 0.5rem;
+      color: #d9dbdb;
+    }
+
+    a:hover {
+      color: #fff;
+    }
+  }
+
+  .social + p {
+    margin-top: 1rem;
+  }
+
+  p + p {
+    font-style: italic;
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .footer {
+    .social {
+      flex-direction: row;
+    }
+  }
+}

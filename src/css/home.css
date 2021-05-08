@@ -1,0 +1,129 @@
+:root {
+  --primary: #fff;
+  --secondary: #fafafa;
+  --blue: #60fcf1;
+  --blue-dark: rgba(96, 252, 241, 0.6);
+  --dark: #000;
+  --dark-light: #1d1d1d;
+  --grey-light: #7f7f7f;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.home {
+  -webkit-box-flex: 90%;
+      -ms-flex: 90%;
+          flex: 90%;
+  background-image: url("../images/home-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.home .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  letter-spacing: 3px;
+}
+
+.home .overlay h1 {
+  font-size: 4rem;
+  color: var(--primary);
+  margin-bottom: 2rem;
+}
+
+.home .overlay h3 {
+  font-size: 1.5rem;
+  color: var(--secondary);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.home .overlay a {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--blue);
+  border: 3px solid var(--blue);
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+
+.home .overlay a:hover,
+.home .overlay a:focus {
+  color: var(--dark);
+  border-color: transparent;
+}
+
+.home .overlay a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+.home .overlay a:hover::before,
+.home .overlay a:focus::before {
+  background: var(--blue);
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+@media all and (max-width: 1024px) {
+  .home {
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+    background-attachment: initial;
+  }
+  .home .overlay {
+    letter-spacing: 3px;
+  }
+  .home .overlay h1 {
+    font-size: 3rem;
+  }
+  .home .overlay h3 {
+    font-size: 1.25rem;
+  }
+}
+/*# sourceMappingURL=home.css.map */

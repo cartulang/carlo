@@ -1,0 +1,151 @@
+:root {
+  --primary: #fff;
+  --secondary: #fafafa;
+  --blue: #60fcf1;
+  --blue-dark: rgba(96, 252, 241, 0.6);
+  --dark: #000;
+  --dark-light: #1d1d1d;
+  --dark-lighter: #2e2e2e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.about {
+  flex: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: var(--dark-light);
+  min-height: 100vh;
+
+  .about-me {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+
+    h1 {
+      font-size: 4.5rem;
+      color: var(--blue);
+    }
+
+    p {
+      margin-top: 1rem;
+      color: var(--primary);
+      font-size: 1.25rem;
+    }
+
+    a {
+      margin-top: 1.5rem;
+      font-size: 1.25rem;
+      text-decoration: none;
+      width: max-content;
+      position: relative;
+      z-index: 1;
+      color: var(--blue);
+      transition: color 0.4s;
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--blue-dark);
+    }
+  }
+
+  .skills {
+    background-color: var(--dark-lighter);
+    box-shadow: 0px 0px 19px 5px rgba(100, 100, 100, 0.75);
+    max-width: 500px;
+
+    h1 {
+      background-color: var(--dark);
+      color: var(--blue);
+      padding: 0.5rem 0.75rem;
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: space-evenly;
+      padding: 2rem 1rem;
+      flex-wrap: wrap;
+
+      svg {
+        margin: 0.75rem;
+        transition: transform 0.4s;
+        &:hover {
+          transform: scale(1.3);
+        }
+      }
+    }
+  }
+}
+
+// media queries
+
+@media all and (max-width: 1300px) {
+  .about {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .about-me {
+      justify-content: center;
+      align-items: center;
+    }
+
+    .skills {
+      h1 {
+        text-align: center;
+        align-self: center;
+        justify-self: center;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .about {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    .about-me {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      padding: 1rem;
+      text-align: center;
+    }
+  }
+}
+
+@media all and (max-width: 450px) {
+  .about {
+    height: 11 0vh;
+    padding: 0.5rem;
+
+    .skills {
+      width: 80%;
+    }
+  }
+}
+
+@media all and (max-width: 370px) {
+  .about {
+    height: 150vh;
+    padding: 0.5rem;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .about {
+    height: 180vh;
+    padding: 0.5rem;
+  }
+}
