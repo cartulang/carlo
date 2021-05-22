@@ -1,11 +1,54 @@
 import "../css/projects.css";
 import { imageSlides } from "./imageSlides";
+import { motion } from "framer-motion";
+
+const titleAnimation = {
+  initial: {
+    opacity: 0,
+  },
+
+  animate: {
+    opacity: 1,
+  },
+
+  transition: {
+    duration: 0.4,
+  },
+};
+
+const projectsAnimation = {
+  initial: {
+    opacity: 0,
+    y: 50,
+  },
+
+  animate: {
+    opacity: 1,
+    y: 0,
+  },
+
+  transition: {
+    duration: 0.3,
+    delay: 0.3,
+  },
+};
 
 const Projects = ({ isModalOpen, setIsModalOpen, setDetails }) => {
   return (
     <section className="projects">
-      <h2>Projects I've done</h2>
-      <div className="project-container">
+      <motion.h2
+        animate={titleAnimation.animate}
+        initial={titleAnimation.initial}
+        transition={titleAnimation.transition}
+      >
+        Projects I've done
+      </motion.h2>
+      <motion.div
+        animate={projectsAnimation.animate}
+        initial={projectsAnimation.initial}
+        transition={projectsAnimation.transition}
+        className="project-container"
+      >
         {imageSlides.map(slide => {
           return (
             <div className="project" key={slide.imageUrl}>
@@ -31,7 +74,7 @@ const Projects = ({ isModalOpen, setIsModalOpen, setDetails }) => {
             </div>
           );
         })}
-      </div>
+      </motion.div>
     </section>
   );
 };
