@@ -15,10 +15,47 @@
   padding: 0;
 }
 
+@-webkit-keyframes linkAnimation {
+  0% {
+    bottom: -100px;
+  }
+  25% {
+    bottom: -75px;
+  }
+  50% {
+    bottom: -50px;
+  }
+  75% {
+    bottom: -25px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes linkAnimation {
+  0% {
+    bottom: -100px;
+  }
+  25% {
+    bottom: -75px;
+  }
+  50% {
+    bottom: -50px;
+  }
+  75% {
+    bottom: -25px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
 .home {
   -webkit-box-flex: 90%;
       -ms-flex: 90%;
           flex: 90%;
+  min-height: 100vh;
   background-image: url("../images/home-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -36,6 +73,7 @@
   left: 0;
   bottom: 0;
   right: 0;
+  z-index: 1;
   background-color: rgba(0, 0, 0, 0.7);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -50,7 +88,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
 }
 
 .home .overlay h1 {
@@ -62,7 +100,7 @@
 .home .overlay h3 {
   font-size: 1.5rem;
   color: var(--secondary);
-  margin-bottom: 3rem;
+  margin-bottom: 0.5rem;
   text-align: center;
 }
 
@@ -76,8 +114,13 @@
   text-decoration: none;
   position: relative;
   z-index: 1;
+  margin-top: 2rem;
   -webkit-transition: color 0.4s;
   transition: color 0.4s;
+  -webkit-animation-name: linkAnimation;
+          animation-name: linkAnimation;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
 }
 
 .home .overlay a:hover,

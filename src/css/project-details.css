@@ -1,0 +1,136 @@
+:root {
+  --primary: #fff;
+  --secondary: #fafafa;
+  --blue: #60fcf1;
+  --blue-dark: rgba(96, 252, 241, 0.6);
+  --dark: #000;
+  --dark-light: #1d1d1d;
+  --grey-light: #7f7f7f;
+}
+
+.overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.overlay .project-details {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 500px;
+  border-radius: 10px;
+  background: #2e2e2e;
+  max-width: 1000px;
+  min-width: 300px;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.overlay .project-details img {
+  min-width: 50%;
+  height: 100%;
+}
+
+.overlay .project-details .close-button {
+  position: absolute;
+  right: -1rem;
+  top: -1rem;
+  cursor: pointer;
+}
+
+.overlay .project-details .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2.5rem;
+  width: 100%;
+}
+
+.overlay .project-details .details .technology {
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.overlay .project-details .details .technology span {
+  margin-top: 0.25rem;
+  background-color: var(--blue);
+  border-radius: 5px;
+  color: var(--dark);
+  margin-right: 0.5rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.overlay .project-details .details h2 {
+  font-size: 2rem;
+}
+
+.overlay .project-details .details h4 {
+  color: var(--secondary);
+  font-size: 1.25rem;
+  margin-top: 2rem;
+}
+
+.overlay .project-details .details p {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: var(--secondary);
+}
+
+.overlay .project-details .details .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.overlay .project-details .details .links a {
+  text-decoration: none;
+  color: var(--blue);
+  border: 2px solid var(--blue);
+  padding: 0.5rem 1rem;
+  margin: 0 1rem;
+}
+
+@media all and (max-width: 786px) {
+  .overlay .project-details {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+  }
+  .overlay .project-details img {
+    display: none;
+  }
+  .overlay .project-details .details .links {
+    margin-top: 3rem;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+}
+/*# sourceMappingURL=project-details.css.map */

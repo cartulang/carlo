@@ -1,0 +1,115 @@
+:root {
+  --primary: #fff;
+  --secondary: #fafafa;
+  --blue: #60fcf1;
+  --blue-dark: rgba(96, 252, 241, 0.6);
+  --dark: #000;
+  --dark-light: #1d1d1d;
+  --grey-light: #7f7f7f;
+}
+
+.overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+
+  .project-details {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 500px;
+    border-radius: 10px;
+    background: #2e2e2e;
+    max-width: 1000px;
+    min-width: 300px;
+    color: #fff;
+    display: flex;
+
+    img {
+      min-width: 50%;
+      height: 100%;
+    }
+    .close-button {
+      position: absolute;
+      right: -1rem;
+      top: -1rem;
+      cursor: pointer;
+    }
+
+    .details {
+      display: flex;
+      flex: auto;
+      flex-direction: column;
+      padding: 2.5rem;
+      width: 100%;
+
+      .technology {
+        margin-top: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        span {
+          margin-top: 0.25rem;
+          background-color: var(--blue);
+          border-radius: 5px;
+          color: var(--dark);
+          margin-right: 0.5rem;
+          padding: 0.25rem 0.5rem;
+        }
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      h4 {
+        color: var(--secondary);
+        font-size: 1.25rem;
+        margin-top: 2rem;
+      }
+
+      p {
+        margin-top: 1rem;
+        font-size: 1rem;
+        color: var(--secondary);
+      }
+
+      .links {
+        display: flex;
+        flex: 1;
+        align-items: flex-end;
+        a {
+          text-decoration: none;
+          color: var(--blue);
+          border: 2px solid var(--blue);
+          padding: 0.5rem 1rem;
+          margin: 0 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 786px) {
+  .overlay {
+    .project-details {
+      flex-direction: column;
+      height: auto;
+
+      img {
+        display: none;
+      }
+
+      .details {
+        .links {
+          margin-top: 3rem;
+          flex: 1;
+        }
+      }
+    }
+  }
+}

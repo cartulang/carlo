@@ -1,32 +1,37 @@
 import "../css/projects.css";
 import { imageSlides } from "./imageSlides";
-import { useState } from "react";
 
-// components
-import ImageSlider from "./ImageSlider";
-import Description from "./Description";
-
-const Projects = () => {
-  const [currentImage, setCurrentImage] = useState(0);
-  const imageLength = imageSlides.length;
-
-  const nextSlide = () => {
-    setCurrentImage(currentImage === imageLength - 1 ? 0 : currentImage + 1);
-  };
-
-  const prevSlide = () => {
-    setCurrentImage(currentImage === 0 ? imageLength - 1 : currentImage - 1);
-  };
-
+const Projects = ({ isModalOpen, setIsModalOpen, setDetails }) => {
   return (
     <section className="projects">
-      <Description imageSlides={imageSlides} currentImage={currentImage} />
-      <ImageSlider
-        imageSlides={imageSlides}
-        currentImage={currentImage}
-        nextSlide={nextSlide}
-        prevSlide={prevSlide}
-      />
+      <h2>Projects I've done</h2>
+      <div className="project-container">
+        {imageSlides.map(slide => {
+          return (
+            <div className="project" key={slide.imageUrl}>
+              <img src={slide.imageUrl} alt={slide.title} />;
+              <div className="img-overlay">
+                <h3>{slide.title}</h3>
+                <button
+                  onClick={() => {
+                    setIsModalOpen(!isModalOpen);
+                    setDetails({
+                      technology: slide.technologyUsed,
+                      title: slide.title,
+                      img: slide.imageUrl,
+                      description: slide.description,
+                      demo: slide.appLink,
+                      repo: slide.githubRepo,
+                    });
+                  }}
+                >
+                  View
+                </button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </section>
   );
 };

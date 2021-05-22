@@ -14,8 +14,29 @@
   padding: 0;
 }
 
+@keyframes linkAnimation {
+  0% {
+    bottom: -100px;
+  }
+
+  25% {
+    bottom: -75px;
+  }
+  50% {
+    bottom: -50px;
+  }
+  75% {
+    bottom: -25px;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
+
 .home {
   flex: 90%;
+  min-height: 100vh;
   background-image: url("../images/home-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -29,12 +50,13 @@
     left: 0;
     bottom: 0;
     right: 0;
+    z-index: 1;
     background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
 
     h1 {
       font-size: 4rem;
@@ -45,7 +67,7 @@
     h3 {
       font-size: 1.5rem;
       color: var(--secondary);
-      margin-bottom: 3rem;
+      margin-bottom: 0.5rem;
       text-align: center;
     }
 
@@ -59,7 +81,10 @@
       text-decoration: none;
       position: relative;
       z-index: 1;
+      margin-top: 2rem;
       transition: color 0.4s;
+      animation-name: linkAnimation;
+      animation-duration: 0.3s;
     }
 
     a:hover,
