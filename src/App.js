@@ -1,4 +1,4 @@
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import "./css/app.css";
 //components
@@ -8,34 +8,37 @@ import Projects from "./components/Projects";
 import ProjectDetails from "./components/ProjectDetails";
 
 function App() {
-  const [isOpen, setIsOpen] = useState("close");
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [details, setDetails] = useState({});
+	const [isOpen, setIsOpen] = useState("close");
+	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [details, setDetails] = useState({});
 
-  return (
-    <Router basename={process.env.PUBLIC_URL}>
-      <div className="app">
-        <Header isOpen={isOpen} setIsOpen={setIsOpen} />
-        <ProjectDetails
-          isModalOpen={isModalOpen}
-          setIsModalOpen={setIsModalOpen}
-          details={details}
-        />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/projects">
-            <Projects
-              setDetails={setDetails}
-              isModalOpen={isModalOpen}
-              setIsModalOpen={setIsModalOpen}
-            />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-  );
+	return (
+		<Router>
+			<div className="app">
+				<Header isOpen={isOpen} setIsOpen={setIsOpen} />
+				<ProjectDetails
+					isModalOpen={isModalOpen}
+					setIsModalOpen={setIsModalOpen}
+					details={details}
+				/>
+				<Routes>
+					<Route exact path="/" element={<Home />} />
+
+					<Route
+						exact
+						path="/projects"
+						element={
+							<Projects
+								setDetails={setDetails}
+								isModalOpen={isModalOpen}
+								setIsModalOpen={setIsModalOpen}
+							/>
+						}
+					/>
+				</Routes>
+			</div>
+		</Router>
+	);
 }
 
 export default App;
